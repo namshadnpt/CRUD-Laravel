@@ -14,16 +14,16 @@ class CreateCrudsTable extends Migration
     public function up()
     {
         Schema::create('cruds', function (Blueprint $table) {
-            $table->id();
-            $table->String('name',100);
-            $table->Integer('age');
-            $table->String('gender',10);
-            $table->String('willing_to_work',100);
-            $table->Boolean('language1');
-            $table->Boolean('language2');
-            $table->Boolean('language3');
-            $table->Boolean('language4');
-            $table->timestamps();
+            $table->integer('id')->primary();
+            $table->string('name', 100)->default('');
+            $table->integer('age')->default(0);
+            $table->string('gender', 20);
+            $table->boolean('willing_to_work')->default(0);
+            $table->boolean('language_1')->default(0);
+            $table->boolean('language_2')->default(0);
+            $table->boolean('language_3')->default(0);
+            $table->boolean('language_4')->default(0);
+            $table->dateTime('created_date')->nullable();
         });
     }
 
